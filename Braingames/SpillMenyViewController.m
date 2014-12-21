@@ -101,8 +101,8 @@
 	
 	NSString *lowPlayer = [[self.highscores objectForKey:@"names"] objectAtIndex:2];
 	NSInteger lowValue = [[[self.highscores objectForKey:@"scores"] objectAtIndex:2] integerValue];
+	
 	[self.highscoreView.lowLabel setText:[NSString stringWithFormat:@"%@: %d", lowPlayer, (int)lowValue]];
-
 	
 }
 

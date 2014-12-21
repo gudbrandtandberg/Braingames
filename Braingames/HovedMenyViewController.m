@@ -28,14 +28,14 @@
 	[self.view addSubview:logoView];
 	
 	//spill Flashline knapp
-	UIButton* startknapp = [UIButton buttonWithType:UIButtonTypeCustom];
+	UIButton* startFlashlineKnapp = [UIButton buttonWithType:UIButtonTypeCustom];
 
-	[startknapp setBackgroundImage:[UIImage imageNamed:@"flashlineknapp.png"] forState:UIControlStateNormal];
-	startknapp.frame = CGRectMake(0, 0, 160, 60);
-	startknapp.center = self.view.center;
-	[startknapp addTarget:self action:@selector(flashline) forControlEvents:UIControlEventTouchUpInside];
+	[startFlashlineKnapp setBackgroundImage:[UIImage imageNamed:@"flashlineknapp.png"] forState:UIControlStateNormal];
+	startFlashlineKnapp.frame = CGRectMake(0, 0, 160, 60);
+	startFlashlineKnapp.center = self.view.center;
+	[startFlashlineKnapp addTarget:self action:@selector(flashline) forControlEvents:UIControlEventTouchUpInside];
 	
-	[self.view addSubview:startknapp];
+	[self.view addSubview:startFlashlineKnapp];
 	
 	//spill Memory knapp
 	UIButton* startMemoryKnapp = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -84,19 +84,19 @@
 - (BOOL)checkIfIsHighscore:(int)poeng {
 	
 	BOOL hs;
-	int forrigeLowscore;
 	
 	self.highscores = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"HighscoresForGame%d", self.game]];
-	
+	int forrigeTredjePlass;
+	forrigeTredjePlass = [[[self.highscores objectForKey:@"scores"] objectAtIndex:2] intValue];
 	
 	switch (self.game) {
+			
 		case 1:
-			hs = (poeng > [[[self.highscores objectForKey:@"scores"] objectAtIndex:2] intValue]);
+			hs = (poeng > forrigeTredjePlass);
 			break;
 		
 		case 2:
-			forrigeLowscore = [[[self.highscores objectForKey:@"scores"] objectAtIndex:2] intValue];
-			hs = (poeng < forrigeLowscore || forrigeLowscore == 0);
+			hs = (poeng < forrigeTredjePlass);
 			break;
 		
 		default:
@@ -108,12 +108,21 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	
+	NSString *name = textField.text;
+	[self addHighscoreWithName:name];
+	[self removeTextField:textField];
+	[textField resignFirstResponder];
+	
+	return YES;
+	
+}
+
+- (void)addHighscoreWithName:(NSString *)name {
 	//Legg til highscores i defaults
 	
 	NSMutableArray *scores = [self.highscores objectForKey:@"scores"];
 	NSMutableArray *names = [self.highscores objectForKey:@"names"];
 	
-	NSString *name = textField.text;
 	NSNumber *zero = [NSNumber numberWithInt:0];
 	NSMutableArray *newNames = [NSMutableArray arrayWithObjects:@"", @"", @"", nil];
 	NSMutableArray *newScores = [NSMutableArray arrayWithObjects:zero, zero, zero, nil];
@@ -132,7 +141,7 @@
 				[newScores setObject:[scores objectAtIndex:1] atIndexedSubscript:2];
 				[newScores setObject:[scores objectAtIndex:0] atIndexedSubscript:1];
 				[newScores setObject:[NSNumber numberWithInt:self.poeng] atIndexedSubscript:0];
-
+				
 			}
 			
 			else { // 2. place
@@ -143,7 +152,7 @@
 				//shuffle along
 				[newNames setObject:name atIndexedSubscript:1];
 				[newNames setObject:[names objectAtIndex:1] atIndexedSubscript:2];
-
+				
 				[newScores setObject:[NSNumber numberWithInt:self.poeng] atIndexedSubscript:1];
 				[newScores setObject:[scores objectAtIndex:1] atIndexedSubscript:2];
 				
@@ -215,13 +224,6 @@
 	
 	[[NSUserDefaults standardUserDefaults] setObject:newHighscores forKey:[NSString stringWithFormat:@"HighscoresForGame%d", self.game]];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	
-	
-	[self removeTextField:textField];
-	[textField resignFirstResponder];
-	
-	return YES;
-	
 }
 
 - (void)removeTextField:(UITextField *)theTextField {

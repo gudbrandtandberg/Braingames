@@ -35,7 +35,6 @@
 		42C1C9901A457AD00046D5B8 /* memoryknapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C9771A457AD00046D5B8 /* memoryknapp.png */; };
 		42C1C9911A457AD00046D5B8 /* playknapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C9781A457AD00046D5B8 /* playknapp.png */; };
 		42C1C9931A457AE20046D5B8 /* feil.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C9921A457AE20046D5B8 /* feil.wav */; };
-		42C1C9961A457AEB0046D5B8 /* rekkeferdig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C9941A457AEB0046D5B8 /* rekkeferdig.wav */; };
 		42C1C9971A457AEB0046D5B8 /* riktig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C9951A457AEB0046D5B8 /* riktig.wav */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +90,6 @@
 		42C1C9771A457AD00046D5B8 /* memoryknapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memoryknapp.png; sourceTree = "<group>"; };
 		42C1C9781A457AD00046D5B8 /* playknapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playknapp.png; sourceTree = "<group>"; };
 		42C1C9921A457AE20046D5B8 /* feil.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = feil.wav; sourceTree = "<group>"; };
-		42C1C9941A457AEB0046D5B8 /* rekkeferdig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rekkeferdig.wav; sourceTree = "<group>"; };
 		42C1C9951A457AEB0046D5B8 /* riktig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = riktig.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +147,6 @@
 		42C1C91F1A457A460046D5B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				42C1C9941A457AEB0046D5B8 /* rekkeferdig.wav */,
 				42C1C9951A457AEB0046D5B8 /* riktig.wav */,
 				42C1C9921A457AE20046D5B8 /* feil.wav */,
 				42C1C95E1A457AD00046D5B8 /* Images */,
@@ -327,7 +324,6 @@
 				42C1C98E1A457AD00046D5B8 /* mem9.png in Resources */,
 				42C1C98D1A457AD00046D5B8 /* mem8.png in Resources */,
 				42C1C9871A457AD00046D5B8 /* mem2.png in Resources */,
-				42C1C9961A457AEB0046D5B8 /* rekkeferdig.wav in Resources */,
 				42C1C9971A457AEB0046D5B8 /* riktig.wav in Resources */,
 				42C1C9861A457AD00046D5B8 /* mem10.png in Resources */,
 				42C1C9891A457AD00046D5B8 /* mem4.png in Resources */,

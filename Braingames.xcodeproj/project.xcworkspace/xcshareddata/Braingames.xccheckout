@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4785ACE7-DEDF-4506-989D-4F26C117B6F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Braingames</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EF95F467736EDAAE5C5A8188FD843E4F0C105992</key>
+		<string>https://github.com/gudbrandtandberg/Braingames.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Braingames.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EF95F467736EDAAE5C5A8188FD843E4F0C105992</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gudbrandtandberg/Braingames.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EF95F467736EDAAE5C5A8188FD843E4F0C105992</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF95F467736EDAAE5C5A8188FD843E4F0C105992</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Braingames</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -13,8 +13,14 @@
 
 @interface FlashLineViewController : UIViewController <FerdigPopUpViewDelegate>
 
+-(void) animer;
+-(void) blink: (UIButton *) knapp;
+-(void) trykk: (UIButton *) knapp;
+-(void) meny;
+-(void) igjen;
+
 @property (nonatomic, weak) id<SpillViewControllerDelegate> delegate;
-@property (weak) FerdigPopUpView* ferdigPopUpView;
+@property FerdigPopUpView* ferdigPopUpView;
 
 @property (nonatomic, strong) NSMutableArray *feltene;
 @property (nonatomic, strong) NSMutableArray *rekken;
@@ -25,12 +31,5 @@
 
 @property AVAudioPlayer *riktigPlayer;
 @property AVAudioPlayer *feilPlayer;
-@property AVAudioPlayer *nyRekkePlayer;
-
--(void) animer;
--(void) blink: (UIButton *) knapp;
--(void) trykk: (UIButton *) knapp;
--(void) meny;
--(void) igjen;
 
 @end

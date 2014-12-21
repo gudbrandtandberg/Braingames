@@ -16,22 +16,17 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 	
-	// initialiserer spillvariabler og ressurser
-	self.antall = 0;
-	self.antTrykk = 0;
+	[self resetSpillVariabler];
+	self.feltene = [NSMutableArray array];
+	
 	self.view.backgroundColor = [UIColor whiteColor];
-	self.feltene = [[NSMutableArray alloc] init];
-	self.rekken = [[NSMutableArray alloc] init];
 	
 	NSURL *riktigLyd = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"riktig" ofType:@"wav"]];
 	NSURL *feilLyd = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"feil" ofType:@"wav"]];
-	NSURL *nyRekkeLyd = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"rekkeferdig" ofType:@"wav"]];
 	
 	self.riktigPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:riktigLyd error:nil];
 	self.feilPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:feilLyd error:nil];
-	self.nyRekkePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:nyRekkeLyd error:nil];
 	
 	CGFloat w = self.view.frame.size.width;
 	CGFloat h = self.view.frame.size.height;
@@ -62,7 +57,6 @@
 	
 	//Legg til fargefeltene
 	for (UIButton* knapp in self.feltene) {
-		
 		[self.view addSubview:knapp];
 	}
 	
@@ -80,7 +74,7 @@
 }
 
 
-- (void) animer{
+- (void)animer{
 	
 	//legger til tall i rekka
 	NSNumber *tall = [NSNumber numberWithInt:arc4random() % 6];
@@ -96,7 +90,7 @@
 	
 }
 
--(void) blink: (UIButton *) knapp {
+- (void)blink:(UIButton *)knapp {
 	
 	[UIView animateWithDuration:0.5
 						  delay:0.0
@@ -106,7 +100,7 @@
 	
 }
 
--(void) trykk: (UIButton *) knapp {
+- (void)trykk:(UIButton *)knapp {
 	
 	self.antTrykk++;
 	[self blink:knapp];
@@ -163,17 +157,23 @@
 	else{[self dismissViewControllerAnimated:YES completion:nil];}
 }
 
--(void) meny {
+- (void)meny {
 	[self.delegate reloadHighscores];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void) igjen {
+- (void)igjen {
 
 	[self.ferdigPopUpView removeFromSuperview];
+	[self resetSpillVariabler];
+	[self performSelector:@selector(animer) withObject:nil afterDelay:0.5];
+}
+
+- (void)resetSpillVariabler {
 	self.antall = 0;
 	self.antTrykk = 0;
-	[self performSelector:@selector(animer) withObject:nil afterDelay:0.5];
+	self.rekken = [NSMutableArray array];
+	[self.poengLabel setText:@"0"];
 }
 
 - (void)didReceiveMemoryWarning {
