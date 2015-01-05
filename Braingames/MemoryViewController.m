@@ -106,7 +106,7 @@
 	[UIView transitionWithView:knappen
 					  duration:0.5
 					   options:UIViewAnimationOptionTransitionFlipFromRight
-					animations:^{knappen.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"mem%d.png", (int)knappen.tag+1]]];}
+					animations:^{knappen.layer.contents = (id)[UIImage imageNamed:[NSString stringWithFormat:@"mem%d.png", (int)knappen.tag+1]].CGImage;}
 					completion:nil];
 	
 	//knappen.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"mem%d.png", (int)knappen.tag+1]]];
@@ -185,7 +185,7 @@
 	[UIView transitionWithView:knappen
 					  duration:0.5
 					   options:UIViewAnimationOptionTransitionFlipFromRight
-					animations:^{knappen.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"memmain.png"]];}
+					animations:^{knappen.layer.contents  = (id)[UIImage imageNamed:@"memmain.png"].CGImage;}
 					completion:nil];
 	
 	//knappen.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"memmain.png"]];
